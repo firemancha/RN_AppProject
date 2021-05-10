@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import {
-	View,
-	Text,
-	StyleSheet,
-} from 'react-native';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './src/screen/Main';
@@ -22,15 +17,8 @@ class App extends Component{
 				</Stack.Navigator>
 			</NavigationContainer>
 			
-		)
+		);
 	};
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#ffffff',
-	}
-})
 
 export default App;
