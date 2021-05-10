@@ -14,7 +14,10 @@ class App extends Component{
 	render() {
 		return (
 			<NavigationContainer>
-				<Stack.Navigator initialRouteName="Main">
+				<Stack.Navigator 
+					screenOptions={{ headerShown: false }}
+					initialRouteName="Main"
+				>
 					<Stack.Screen name="Main" component={MainScreen} />
 				</Stack.Navigator>
 			</NavigationContainer>
