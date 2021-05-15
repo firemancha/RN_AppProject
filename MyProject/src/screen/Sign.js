@@ -4,18 +4,22 @@ import {
     View,
     Text,
 		TextInput,
-		TouchableOpacity,
+		// TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import DStyle from '../component/DefaultStyle';
 import FindPassWord from '../component/FindPW';
 import Join from '../component/Join';
 import Login from '../component/Login';
+import { observer, inject } from 'mobx-react';
 
+@inject("userInfoStore")
+@observer
 class SignScreen extends Component {
 	render(){
 		// console.log(WIDTH);
 		// console.log(HEIGHT);
+		console.log(this.props.userInfoStore.userID);
 		return(
 			<View style={DStyle.container}>
 				<View style={DStyle.header} />
