@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'mobx-react';
+import stores from "./src/stores";
 import MainScreen from './src/screen/Main';
 import SignScreen from './src/screen/Sign';
 
@@ -17,15 +19,17 @@ class App extends Component{
 	}
 	render() {
 		return (
-			<NavigationContainer>
-				<Stack.Navigator 
-					screenOptions={{ headerShown: false }}
-					initialRouteName="Sign"
-				>
-					<Stack.Screen name="Main" component={MainScreen} />
-					<Stack.Screen name="Sign" component={SignScreen} />
-				</Stack.Navigator>
-			</NavigationContainer>
+			<Provider {...stores}>
+				<NavigationContainer>
+					<Stack.Navigator 
+						screenOptions={{ headerShown: false }}
+						initialRouteName="Sign"
+					>
+						<Stack.Screen name="Main" component={MainScreen} />
+						<Stack.Screen name="Sign" component={SignScreen} />
+					</Stack.Navigator>
+				</NavigationContainer>
+			</Provider>
 		);
 	};
 };
