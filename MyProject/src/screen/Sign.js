@@ -48,14 +48,27 @@ class SignScreen extends Component {
 								</View>
 								<View style={styles.content_input}>
 									<View style={styles.id_container}>
-										<TextInput style={styles.content_inputbox}
-											placeholder={"ID"}
+										<TextInput
+											style={styles.content_inputbox}
+											placeholder="ID"
+											autoCapitalize="none"
+											type="text"
+											returnKeyType="next"
+											autoFocus={true}
+											blurOnSubmit={false}
+											onChangeText={this.props.userInfoStore.handleUserID}
+											onSubmitEditing={()=>{this.pwInput.focus();}}
 										/>
 									</View>
 									<View style={styles.pw_container}>
-										<TextInput style={styles.content_inputbox}
-											placeholder={"PassWord"}
+										<TextInput
+											style={styles.content_inputbox}
+											placeholder="PassWord"
+											autoCapitalize="none"
+											type="text"
+											ref={(input) => {this.pwInput = input;}}
 											secureTextEntry={true}
+											onChangeText={this.props.userInfoStore.handleUserPW}
 										/>
 									</View>
 								</View>
