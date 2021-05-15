@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: "80%",
     height: "40%",
+    borderRadius: 8,
     backgroundColor: "#ffea93",
   },
   icon_container:{
