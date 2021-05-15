@@ -5,11 +5,16 @@ import {
   StyleSheet
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { inject } from 'mobx-react';
 
+@inject("userInfoStore")
 class Login extends Component{
   render(){
     return(
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={this.props.userInfoStore.checkUserInfoHandler}
+      >
         {/* <Text>HI</Text>
          */}
          <LinearGradient
