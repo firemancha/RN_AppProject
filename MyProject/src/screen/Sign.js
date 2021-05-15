@@ -19,7 +19,7 @@ class SignScreen extends Component {
 	render(){
 		// console.log(WIDTH);
 		// console.log(HEIGHT);
-		console.log(this.props.userInfoStore.userID);
+		// console.log(this.props.userInfoStore.userID);
 		return(
 			<View style={DStyle.container}>
 				<View style={DStyle.header} />
